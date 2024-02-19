@@ -1,14 +1,15 @@
 @use "./variables" as *;
 @mixin container-setup {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
 }
 
 @mixin btn-default {
+  font-size: 1rem;
   background-color: $main-orange;
   color: white;
   font-weight: 700;
-  padding: 0.5rem 1.5rem;
+  padding: 0.7rem 2.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;

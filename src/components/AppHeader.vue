@@ -95,24 +95,22 @@ header {
       @include btn-default;
     }
   }
-  .container {
-    display: flex;
-    justify-content: center;
-  }
+
   .nav-bar {
     @include container-setup;
-    padding-block: 1rem;
+
+    padding-block: 1.7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-transform: capitalize;
     .fa-angle-down {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
 
     figure {
-      width: 15%;
+      width: 12%;
       img {
         width: 100%;
       }

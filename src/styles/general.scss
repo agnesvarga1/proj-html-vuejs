@@ -1,10 +1,7 @@
 @use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
-
-@font-face {
-  font-family: "ketta";
-  src: url("./font/HelloKetta-d99oX.ttf");
-}
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nothing+You+Could+Do&display=swap");
 
 * {
   margin: 0;
@@ -27,4 +24,12 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.script {
+  color: $light-blue;
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
 }
