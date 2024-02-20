@@ -17,3 +17,18 @@
     background-color: $darker-blue;
   }
 }
+
+@mixin btn-sub {
+  font-size: 1rem;
+  background-color: #fef9f7;
+  color: $main-orange;
+  font-weight: 700;
+  padding: 0.7rem 2.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: $main-orange;
+    color: #fff;
+  }
+}

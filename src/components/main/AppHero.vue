@@ -177,6 +177,7 @@ export default {
           width: 60%;
           img {
             width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
           }
         }
         figure.left-left {
@@ -187,6 +188,7 @@ export default {
           img {
             width: inherit;
             position: absolute;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             bottom: 2rem;
           }
         }
