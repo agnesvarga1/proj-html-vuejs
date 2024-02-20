@@ -4,6 +4,7 @@ import CourseCards from "./CourseCards.vue";
 import AppHero from "./AppHero.vue";
 import Testimonials from "./Testimonials.vue";
 import AppSection from "./AppSection.vue";
+import StickyComp from "../StickyComp.vue";
 //store
 import { store } from "../../store";
 
@@ -15,6 +16,7 @@ export default {
   },
   name: "AppMain",
   components: {
+    StickyComp,
     AppHero,
     AppSection,
     Testimonials,
@@ -24,6 +26,10 @@ export default {
 </script>
 <template>
   <main>
+    <div id="stick">
+      <StickyComp />
+    </div>
+
     <AppHero />
     <AppSection />
     <Testimonials />

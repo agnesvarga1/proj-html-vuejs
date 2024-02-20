@@ -98,9 +98,10 @@ export default {
           </div>
         </div>
       </div>
-      <div class="side-r">
-        <div class="outline-font">Course</div>
-      </div>
+      <div class="side-r"></div>
+    </div>
+    <div class="helper">
+      <button>View all courses &rarr;</button>
     </div>
   </div>
 </template>
@@ -108,6 +109,7 @@ export default {
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 .wrapper {
+  padding-top: 3rem;
   h2,
   h3 {
     text-align: center;
@@ -115,27 +117,21 @@ export default {
   }
   .container {
     display: flex;
-    .side-l,
+    .side-l {
+      width: 10rem;
+    }
     .side-r {
-      width: 20%;
-      display: flex;
-
-      div {
-        font-size: 10rem;
-        color: $main-orange;
-        opacity: 0.2;
-        transform: rotate(90deg);
-      }
+      width: 10rem;
     }
     .cards {
-      width: 60%;
+      width: calc(100% - 20rem);
       .row {
         display: flex;
-        width: 100%;
-        gap: 0.5rem;
+        gap: 1rem;
         flex-wrap: wrap;
         .card {
-          width: calc(100% / 4 - 0.5rem);
+          width: calc(100% / 4 - 0.8rem);
+          position: relative;
           figure {
             img {
               width: 100%;
@@ -147,18 +143,37 @@ export default {
             gap: 0.3rem;
             padding: 1.2rem;
             h4 {
-              font-size: 1.5rem;
+              font-size: 1.2rem;
             }
             div span {
               opacity: 0.5;
               margin: 0.2rem;
+              i {
+                margin-right: 5px;
+              }
             }
             .price {
               color: $main-orange;
             }
+            &:hover {
+              border: 2px solid $main-orange;
+              position: absolute;
+              background-color: #fff;
+              transform: scaleX(0.9);
+              left: -1.2rem;
+              bottom: 2.2rem;
+            }
           }
         }
       }
+    }
+  }
+  .helper {
+    display: flex;
+    padding: 3rem;
+    justify-content: center;
+    button {
+      @include btn-sub;
     }
   }
 }

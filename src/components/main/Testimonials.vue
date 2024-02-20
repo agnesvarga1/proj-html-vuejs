@@ -46,7 +46,7 @@ export default {
   }
   .slider {
     position: relative;
-    min-height: 50vh;
+    min-height: 60vh;
 
     .slider-elem {
       width: calc(100% / 4);
