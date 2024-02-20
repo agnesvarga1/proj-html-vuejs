@@ -2,6 +2,7 @@
 //components
 
 import FeaturedCard from "./FeaturedCard.vue";
+
 //store
 import { store } from "../../store";
 
@@ -60,6 +61,11 @@ export default {
     <div class="wrap">
       <figure>
         <img src="../../assets/img/artist-video-poster.jpg" alt="artist" />
+        <img
+          id="yt"
+          src="../../assets/img/icon-youtube-play.png"
+          alt="icon youtube"
+        />
       </figure>
     </div>
   </section>
@@ -128,21 +134,38 @@ section.top {
   }
 }
 section.bottom {
+  background: url("../../assets/img/artist-shape-33-300x162.png") repeat-x
+    bottom left;
+  background-size: 50% 40%;
+
   padding-top: 2rem;
   .wrap {
     width: 60%;
 
     margin: 0 auto;
-    background: url("../../assets/img/blob.svg") no-repeat;
-    padding-top: 5rem;
+    background: url("../../assets/img/maxcoach-shape-05-100x100.png") no-repeat,
+      url("../../assets/img/blob.svg") no-repeat,
+      url("../../assets/img/maxcoach-shape-12-150x150.png") no-repeat;
+    background-size: 20%, 35%, 20%;
+    background-position: left top, 0% -40%, right bottom;
+
+    padding: 1rem;
+
     figure {
       width: 80%;
       margin: 0 auto;
-      padding: 4rem;
-
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+      img {
+        width: 100%;
+      }
+      #yt {
+        position: absolute;
+        width: 10%;
+        cursor: pointer;
+      }
     }
   }
 }

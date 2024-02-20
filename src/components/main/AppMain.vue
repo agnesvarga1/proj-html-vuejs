@@ -1,7 +1,8 @@
 <script>
 //components
+import CourseCards from "./CourseCards.vue";
 import AppHero from "./AppHero.vue";
-
+import Testimonials from "./Testimonials.vue";
 import AppSection from "./AppSection.vue";
 //store
 import { store } from "../../store";
@@ -16,6 +17,8 @@ export default {
   components: {
     AppHero,
     AppSection,
+    Testimonials,
+    CourseCards,
   },
 };
 </script>
@@ -23,6 +26,8 @@ export default {
   <main>
     <AppHero />
     <AppSection />
+    <Testimonials />
+    <CourseCards />
   </main>
 </template>
 <style lang="scss" scoped>
