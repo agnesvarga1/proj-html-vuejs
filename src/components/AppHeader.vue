@@ -1,6 +1,45 @@
 <script>
 export default {
   name: "AppHeader",
+
+  data() {
+    return {
+      display: "",
+    };
+  },
+
+  methods: {
+    timer() {
+      let nowInMs = new Date().getTime();
+      let endDateInMs = new Date("February 23, 2024 16:40:00").getTime();
+
+      let diff = endDateInMs - nowInMs;
+
+      let diffInS = diff / 1000;
+      let mTotal = Math.floor(diffInS / 60);
+
+      let h = Math.floor(mTotal / 60);
+
+      let d = Math.floor(h / 24);
+      let hdis = Math.floor(h % 24);
+      let m = Math.floor(mTotal - h * 60);
+      let s = Math.floor(diffInS - mTotal * 60);
+
+      hdis < 10 ? (hdis = `0${hdis}`) : hdis;
+      d < 10 ? (d = `0${d}`) : d;
+      m < 10 ? (m = `0${m}`) : d;
+      s < 10 ? (s = `0${s}`) : d;
+
+      this.display = `${d} : ${hdis} : ${m} : ${s}`;
+    },
+    countDown() {
+      setInterval(this.timer, 1000);
+    },
+  },
+  mounted() {
+    this.timer();
+    this.countDown();
+  },
 };
 </script>
 <template>
@@ -11,10 +50,7 @@ export default {
         <div>
           <div class="display-clock">
             <i class="fa-regular fa-clock"></i>
-            <span class="display display-day">00</span> :
-            <span class="display display-hrs">00</span> :
-            <span class="display display-mins">00</span> :
-            <span class="display display-sec">00</span>
+            <span>{{ display }}</span>
           </div>
         </div>
         <button>Get Ticket</button>
