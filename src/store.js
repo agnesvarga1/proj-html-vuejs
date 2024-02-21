@@ -37,7 +37,7 @@ export const store = reactive({
         "1 am free to learn at my own pace, follow my own schedule and choose the subject want to learn fromthe syllabus. Great study portal for people like me. ",
       fullName: "Mina Hollace",
       occupation: "Freelancer",
-      active: true,
+      // active: true,
     },
     {
       avatar: "artist-testimonial-avatar-02.jpg",
@@ -47,7 +47,8 @@ export const store = reactive({
         "I need to get a certification for English proficiency and  MaxCoach is my best choice. Their tutors are smart and professional when dealing with students. ",
       fullName: "Maddy Kondor",
       occupation: "IT Specialist",
-      active: false,
+      // active: false,
+      // next: true,
     },
     {
       avatar: "artist-testimonial-avatar-04.jpg",
@@ -57,7 +58,8 @@ export const store = reactive({
         "I am happy with their arrangement of lessons ansubjects. They reflect a scientific investigation into effective methods to be adopted for learners of all levels. ",
       fullName: "Flore Themes",
       occupation: "Multimedia Admin",
-      active: false,
+      // active: false,
+      // out: true,
     },
     {
       avatar: "artist-testimonial-avatar-03.jpg",
@@ -67,7 +69,8 @@ export const store = reactive({
         " I'm a very strict person so require everything to be organized and neat. Then, Il be able to make thingsfight and shine. MaxCoach guys just got me.",
       fullName: "Luvic Dubbley",
       occupation: "Private Tutor",
-      active: false,
+      // active: false,
+      // prev: true,
     },
   ],
 });
