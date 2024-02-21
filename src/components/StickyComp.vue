@@ -16,6 +16,8 @@ export default {
 div {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 3rem;
   i {
     margin-block: 5px;

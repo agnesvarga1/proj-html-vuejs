@@ -5,6 +5,8 @@ import AppHero from "./AppHero.vue";
 import Testimonials from "./Testimonials.vue";
 import AppSection from "./AppSection.vue";
 import StickyComp from "../StickyComp.vue";
+import BlogComp from "./BlogComp.vue";
+import EventsComp from "./EventsComp.vue";
 //store
 import { store } from "../../store";
 
@@ -21,19 +23,20 @@ export default {
     AppSection,
     Testimonials,
     CourseCards,
+    BlogComp,
+    EventsComp,
   },
 };
 </script>
 <template>
   <main>
-    <div id="stick">
-      <StickyComp />
-    </div>
-
+    <StickyComp />
     <AppHero />
     <AppSection />
     <Testimonials />
     <CourseCards />
+    <BlogComp />
+    <EventsComp />
   </main>
 </template>
 <style lang="scss" scoped>

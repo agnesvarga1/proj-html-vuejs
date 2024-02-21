@@ -117,6 +117,7 @@ export default {
   }
   .container {
     display: flex;
+    margin-top: 2rem;
     .side-l {
       width: 10rem;
     }
