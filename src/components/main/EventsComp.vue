@@ -100,6 +100,16 @@ h3 {
 .container {
   display: flex;
   margin-top: 1rem;
+  .left {
+    background: url("../../assets/img/blob-02.svg") no-repeat;
+    background-position: left bottom;
+  }
+  .right {
+    background-image: url("../../assets/img/maxcoach-shape-13.png"),
+      url("../../assets/img/blob-02.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
   .left,
   .right {
     width: 20%;
@@ -164,7 +174,8 @@ h3 {
 
   .right.news-letter {
     background: url("../../assets/img/artist-shape-color-paint-bottom-right.png")
-      no-repeat right;
+      no-repeat;
+    background-position: right bottom;
   }
   .mid.news-letter {
     display: flex;
