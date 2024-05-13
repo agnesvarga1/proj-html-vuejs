@@ -14,11 +14,15 @@ export default {
     timer() {
       let nowInMs = new Date().getTime();
 
-      let endDateInMs = new Date("February 25, 2024 16:40:00").getTime();
+      let endDateInMs = new Date("May 14, 2024 19:40:00").getTime();
 
       let diff = endDateInMs - nowInMs;
 
       let diffInS = diff / 1000;
+      if (diffInS === 0) {
+        end = true;
+        return;
+      }
       let mTotal = Math.floor(diffInS / 60);
 
       let h = Math.floor(mTotal / 60);
