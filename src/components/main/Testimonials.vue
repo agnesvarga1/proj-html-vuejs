@@ -7,7 +7,10 @@ export default {
     return {
       store,
       currentImg: 0,
+      prevUti: false,
+      nextUti: false,
       clicked: false,
+      outUti: false,
     };
   },
   components: {
@@ -16,7 +19,18 @@ export default {
   methods: {
     getI(i) {
       this.currentImg = i;
+      i === 0 ? (this.prevUti = true) : 0;
+      i === store.testimonials.length ? (this.nextUti = true) : 0;
+    },
+    clickEvent() {
+      this.clicked = true;
+    },
+    clickRelease() {
+      this.clicked = false;
+    },
+    handleMouseEvent(e) {
       console.log(this.currentImg);
+      console.log(e.clientX);
     },
   },
 };
@@ -25,7 +39,7 @@ export default {
   <div class="wrapper">
     <h3 class="script">Testimonials</h3>
     <h2>Why do people love me?</h2>
-    <div class="slider">
+    <div class="slider" @mousedown="clickEvent" @mouseup="clickRelease">
       <div
         class="slider-elem"
         v-for="(item, index) in store.testimonials"
@@ -37,7 +51,7 @@ export default {
             ? 'next'
             : '' || currentImg - 1 === index
             ? 'prev'
-            : ''
+            : '' || 'out'
         "
       >
         <TestimonialCard :propsCards="item" />
@@ -75,28 +89,28 @@ export default {
     .slider-elem {
       height: 400px;
       width: calc(100% / 4);
+      transition: all 0.5s linear;
       background-color: white;
-
+      left: 50%;
+      transform: translateX(-50%);
       position: absolute;
       margin: 2rem;
       opacity: 0.5;
     }
-    .active {
-      opacity: 1;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .next {
-      left: 70%;
+    .out {
+      display: none;
     }
     .prev {
-      left: 5%;
+      transform: translateX(-150%);
     }
-
-    .out {
-      left: 100%;
+    .next {
+      transform: translateX(50%);
+    }
+    .active {
+      opacity: 1;
     }
   }
+
   .slider-handler {
     display: flex;
     justify-content: center;

@@ -118,9 +118,9 @@ export default {
           }
 
           h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-align: left;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
           }
         }
       }
@@ -137,6 +137,7 @@ export default {
         h2 {
           text-align: left;
           margin-top: 1rem;
+          font-size: 2rem;
         }
         .details-m {
           display: flex;

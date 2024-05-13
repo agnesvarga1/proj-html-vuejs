@@ -4,14 +4,17 @@ export default {
 
   data() {
     return {
+      countDownEnd: null,
       display: "",
+      end: false,
     };
   },
 
   methods: {
     timer() {
       let nowInMs = new Date().getTime();
-      let endDateInMs = new Date("February 23, 2024 16:40:00").getTime();
+
+      let endDateInMs = new Date("February 25, 2024 16:40:00").getTime();
 
       let diff = endDateInMs - nowInMs;
 
@@ -25,15 +28,20 @@ export default {
       let m = Math.floor(mTotal - h * 60);
       let s = Math.floor(diffInS - mTotal * 60);
 
-      hdis < 10 ? (hdis = `0${hdis}`) : hdis;
-      d < 10 ? (d = `0${d}`) : d;
-      m < 10 ? (m = `0${m}`) : d;
-      s < 10 ? (s = `0${s}`) : d;
+      if (d === 0 && hdis === 0 && m === 0 && s === 0) {
+        end = true;
+        clearInterval(countDown);
+      } else {
+        hdis < 10 ? (hdis = `0${hdis}`) : hdis;
+        d < 10 ? (d = `0${d}`) : d;
+        m < 10 ? (m = `0${m}`) : d;
+        s < 10 ? (s = `0${s}`) : d;
 
-      this.display = `${d} : ${hdis} : ${m} : ${s}`;
+        this.display = `${d} : ${hdis} : ${m} : ${s}`;
+      }
     },
     countDown() {
-      setInterval(this.timer, 1000);
+      this.countDowEnd = setInterval(this.timer, 1000);
     },
   },
   mounted() {
@@ -45,7 +53,7 @@ export default {
 <template>
   <header>
     <div class="wrapper">
-      <div class="count-down-container">
+      <div v-show="end === false" class="count-down-container">
         <h4>Starts TOMORROW! Our biggest event of the year...</h4>
         <div>
           <div class="display-clock">

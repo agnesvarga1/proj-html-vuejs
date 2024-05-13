@@ -12,7 +12,7 @@ export default {
   <footer>
     <div class="container">
       <div class="left">
-        <h3>Adress</h3>
+        <h3>Address</h3>
         <span>382 NE 191st St # 87335 Miami,FL-3652</span>
         <span>+1(305) 547-9909 (9am - 5pm EST, Monday - Friday) </span>
         <span>support@maxcoach.com</span>

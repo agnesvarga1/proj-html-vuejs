@@ -124,7 +124,7 @@ h3 {
       .card {
         h3 {
           text-align: left;
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
         width: calc(50% - 1.5rem);
         display: flex;
@@ -169,13 +169,14 @@ h3 {
   .left.news-letter {
     background: url("../../assets/img/artist-shape-color-paint-top-left-300x170.png")
       no-repeat;
-    background-size: contain;
+    background-size: 95% 100%;
   }
 
   .right.news-letter {
     background: url("../../assets/img/artist-shape-color-paint-bottom-right.png")
       no-repeat;
     background-position: right bottom;
+    background-size: contain;
   }
   .mid.news-letter {
     display: flex;
@@ -185,30 +186,44 @@ h3 {
     .input-field {
       position: relative;
       width: 60%;
+
       input {
-        background: transparent;
         border: none;
-        border-bottom: 2px solid #fff;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        background: none;
+        border-bottom: 1px solid #fff;
+
         width: 90%;
         height: 2rem;
-        padding: 0.5rem;
+        font-size: 1.2rem;
+        color: #fff;
         &:focus {
-          background-color: #244186;
-          border: 1px solid #fff;
+          // background-color: #244186;
+
+          border: none;
+          border-bottom: 1px solid #fff;
         }
 
         &::placeholder {
-          color: #fff;
+          color: #fafafa;
           font-size: 2rem;
         }
-        &:hover {
-          background-color: #fff;
-        }
+        // &:hover {
+        //   background-color: #fff;
+        // }
       }
       #helper {
         position: absolute;
         font-size: 1.8rem;
         right: 10%;
+        cursor: pointer;
+        &:hover {
+          transform: translateX(8px);
+        }
       }
     }
   }
