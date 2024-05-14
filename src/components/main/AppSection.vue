@@ -10,11 +10,20 @@ export default {
   data() {
     return {
       store,
+      videoVisible: false,
     };
   },
   name: "AppSection",
   components: {
     FeaturedCard,
+  },
+  methods: {
+    openModal() {
+      this.videoVisible = true;
+    },
+    closeModal() {
+      this.videoVisible = false;
+    },
   },
 };
 </script>
@@ -67,14 +76,22 @@ export default {
             id="yt"
             src="../../assets/img/icon-youtube-play.png"
             alt="icon youtube"
+            @click="openModal()"
           />
         </figure>
       </div>
-      <div class="video-container">
+      <div v-show="videoVisible === true" class="video-container">
         <iframe
-          src="https://maxcoach.thememove.com/main/artist/#lg=1&slide=0"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/ROa9p2f2jjE?si=vWVWhkU3GhSrKIiN"
+          title="YouTube video player"
           frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
         ></iframe>
+        <div @click="closeModal()" id="close-btn">X</div>
       </div>
     </section>
   </div>
@@ -156,14 +173,30 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 1%;
+      background-color: #000;
       top: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 3;
+      z-index: 2;
       padding-block: 2rem;
       iframe {
         width: 100%;
         height: 100%;
+      }
+      #close-btn {
+        background-color: $main-orange;
+        position: absolute;
+        top: -2%;
+        right: 5%;
+        border-radius: 50%;
+        padding: 0.6rem 0.8rem;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 1rem;
+        z-index: 10;
+        color: #fff;
+        cursor: pointer;
       }
     }
     .wrap {

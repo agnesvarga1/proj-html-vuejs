@@ -7,6 +7,8 @@ export default {
       countDownEnd: null,
       display: "",
       end: false,
+      isScrolled: false,
+      scrollPos: 0,
     };
   },
 
@@ -47,17 +49,32 @@ export default {
     countDown() {
       this.countDowEnd = setInterval(this.timer, 1000);
     },
+    handleScroll(event) {
+      if (window.scrollY > 50) {
+        this.isScrolled = true;
+      } else if (window.scrollY < 50) {
+        this.isScrolled = false;
+      }
+      console.log(this.scrollPos);
+    },
   },
   mounted() {
     this.timer();
     this.countDown();
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
 <template>
   <header>
     <div class="wrapper">
-      <div v-show="end === false" class="count-down-container">
+      <div
+        v-show="end === false || isScrolled === false"
+        class="count-down-container"
+      >
         <h4>Starts TOMORROW! Our biggest event of the year...</h4>
         <div>
           <div class="display-clock">
@@ -69,7 +86,7 @@ export default {
       </div>
     </div>
 
-    <div class="nav-bar">
+    <div class="nav-bar" :class="isScrolled === true ? 'sticky-nav' : ''">
       <figure><img src="../assets/img/dark-logo.png" alt="logo" /></figure>
       <!-- NAV BAR LINKS -->
       <ul class="nav-bar-links">
@@ -114,6 +131,7 @@ export default {
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixins" as *;
 header {
+  position: relative;
   .wrapper {
     background-color: $white-vari;
   }
@@ -173,12 +191,32 @@ header {
           &:hover {
             color: $main-orange;
           }
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 1px;
+            background: $main-orange;
+            transition: width 1s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
         }
       }
     }
     .socials {
       gap: 1rem;
     }
+  }
+  .sticky-nav {
+    position: fixed;
+    background-color: #fff;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    padding-inline: 5%;
   }
 }
 </style>

@@ -30,6 +30,7 @@ div {
   background-color: $white-vari;
   position: fixed;
   right: 0;
+  top: 10rem;
   padding: 1.2rem;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
