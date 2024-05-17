@@ -16,13 +16,20 @@ export default {
     AppMain,
     AppFooter,
   },
+  methods: {
+    closeModal() {
+      store.isMenuOpen = false;
+    },
+  },
 };
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain />
-  <AppFooter />
+  <div>
+    <AppHeader />
+    <AppMain />
+    <AppFooter />
+  </div>
 </template>
 
 <style lang="scss">

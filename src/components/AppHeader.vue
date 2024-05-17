@@ -1,4 +1,5 @@
 <script>
+import { store } from "../store";
 export default {
   name: "AppHeader",
 
@@ -9,7 +10,7 @@ export default {
       end: false,
       isScrolled: false,
       scrollPos: 0,
-      isMenuOpen: false,
+      stateMenu: store.isMenuOpen,
     };
   },
 
@@ -55,7 +56,10 @@ export default {
       }
     },
     toggleMenu() {
-      this.isMenuOpen = true;
+      this.stateMenu = true;
+    },
+    closeModal() {
+      this.stateMenu = false;
     },
   },
   mounted() {
@@ -123,46 +127,10 @@ export default {
           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </li>
       </ul>
-      <div class="nav-modal" :class="isMenuOpen ? 'visible' : ''">
-        <ul class="links-sm">
-          <li>
-            <a href="#">Home<i class="fa-solid fa-angle-down"></i></a>
-          </li>
-          <li>
-            <a href="#">Pages<i class="fa-solid fa-angle-down"></i></a>
-          </li>
-          <li>
-            <a href="#">courses<i class="fa-solid fa-angle-down"></i></a>
-          </li>
-          <li>
-            <a href="#">Features<i class="fa-solid fa-angle-down"></i></a>
-          </li>
-          <li>
-            <a href="#">Blog<i class="fa-solid fa-angle-down"></i></a>
-          </li>
-          <li>
-            <a href="#">shop<i class="fa-solid fa-angle-down"></i></a>
-          </li>
-        </ul>
-        <!-- SOCIAL LINKS -->
-        <ul class="social-sm">
-          <li>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          </li>
-        </ul>
-      </div>
+
       <div
         @click="toggleMenu()"
-        v-show="isMenuOpen === false"
+        v-show="stateMenu === false"
         class="menu-icon-container"
       >
         <div class="bar"></div>
@@ -170,6 +138,48 @@ export default {
       </div>
     </div>
   </header>
+  <div
+    class="nav-modal"
+    v-show="stateMenu"
+    :class="stateMenu ? 'visible-f' : ''"
+  >
+    <div><span @click="closeModal()">X</span></div>
+    <ul class="links-sm">
+      <li>
+        <a href="#">Home<i class="fa-solid fa-angle-down"></i></a>
+      </li>
+      <li>
+        <a href="#">Pages<i class="fa-solid fa-angle-down"></i></a>
+      </li>
+      <li>
+        <a href="#">courses<i class="fa-solid fa-angle-down"></i></a>
+      </li>
+      <li>
+        <a href="#">Features<i class="fa-solid fa-angle-down"></i></a>
+      </li>
+      <li>
+        <a href="#">Blog<i class="fa-solid fa-angle-down"></i></a>
+      </li>
+      <li>
+        <a href="#">shop<i class="fa-solid fa-angle-down"></i></a>
+      </li>
+    </ul>
+    <!-- SOCIAL LINKS -->
+    <ul class="social-sm">
+      <li>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </li>
+    </ul>
+  </div>
 </template>
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
@@ -274,12 +284,55 @@ header {
     display: none;
   }
   .nav-modal {
+    padding: 1rem;
     position: absolute;
+    width: 50%;
+    height: 100vh;
     top: 0;
     right: 0;
     z-index: 20;
+    background-color: #fff;
+    font-size: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      display: flex;
+      justify-content: end;
+      padding: 1rem;
+
+      span {
+        cursor: pointer;
+        padding: 10px;
+        background-color: $main-orange;
+        color: #fff;
+        border-radius: 10px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    .social-sm,
+    .links-sm {
+      li {
+        a {
+          color: $main-gray;
+          text-transform: capitalize;
+          &:hover {
+            color: $main-orange;
+          }
+        }
+      }
+    }
     .links-sm {
       display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+    .social-sm {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
     }
   }
 
@@ -295,6 +348,9 @@ header {
   }
   .visible {
     display: block;
+  }
+  .visible-f {
+    display: flex;
   }
 }
 </style>
