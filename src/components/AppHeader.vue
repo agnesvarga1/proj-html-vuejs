@@ -140,6 +140,7 @@ export default {
   </header>
   <div
     class="nav-modal"
+    v-scroll-lock="stateMenu"
     v-show="stateMenu"
     :class="stateMenu ? 'visible-f' : ''"
   >
@@ -351,6 +352,7 @@ header {
   }
   .visible-f {
     display: flex;
+    overflow: hidden;
   }
 }
 </style>
