@@ -293,11 +293,11 @@ header {
     padding: 1rem;
     position: absolute;
     width: 50%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     right: 0;
     z-index: 20;
-    background-color: #fff;
+    background-color: #ffffffdb;
     font-size: 2rem;
     flex-direction: column;
     justify-content: space-between;
@@ -358,6 +358,13 @@ header {
   .visible-f {
     display: flex;
     overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-modal {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
