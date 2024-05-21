@@ -10,7 +10,7 @@ export default {
       end: false,
       isScrolled: false,
       scrollPos: 0,
-      stateMenu: store.isMenuOpen,
+      isModalOpen: false,
     };
   },
 
@@ -55,11 +55,14 @@ export default {
         this.isScrolled = false;
       }
     },
-    toggleMenu() {
-      this.stateMenu = true;
+    openModal() {
+      this.isModalOpen = true;
     },
     closeModal() {
-      this.stateMenu = false;
+      this.isModalOpen = false;
+    },
+    handleClickOutside(event) {
+      this.closeModal();
     },
   },
   mounted() {
@@ -129,8 +132,8 @@ export default {
       </ul>
 
       <div
-        @click="toggleMenu()"
-        v-show="stateMenu === false"
+        @click="openModal()"
+        v-show="isModalOpen === false"
         class="menu-icon-container"
       >
         <div class="bar"></div>
@@ -140,9 +143,11 @@ export default {
   </header>
   <div
     class="nav-modal"
-    v-scroll-lock="stateMenu"
-    v-show="stateMenu"
-    :class="stateMenu ? 'visible-f' : ''"
+    v-click-outside="handleClickOutside"
+    v-scroll-lock="isModalOpen"
+    v-if="isModalOpen"
+    :class="isModalOpen ? 'visible-f' : ''"
+    ref="modal"
   >
     <div><span @click="closeModal()">X</span></div>
     <ul class="links-sm">
