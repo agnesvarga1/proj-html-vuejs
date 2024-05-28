@@ -89,7 +89,6 @@ export default {
 @use "../../styles/partials/mixins" as *;
 .wrapper {
   height: 60vh;
-
   display: flex;
   background-color: #fbf9f6;
   position: relative;
@@ -145,6 +144,7 @@ export default {
       display: flex;
     }
     .jumbo-left {
+      border: 2px solid green;
       background-image: url("../../assets/img/blob.svg");
       background-repeat: no-repeat;
       background-size: 80%;
@@ -242,6 +242,25 @@ export default {
           bottom: 2rem;
           height: 158%;
         }
+      }
+    }
+  }
+  /*************************************BREAKPOINT TO LG************************************************** */
+  @media only screen and (max-width: 992px) {
+    .jumbo-container {
+      flex-direction: column;
+      .jumbo {
+        .jumbo-left {
+          width: 50%;
+        }
+      }
+      .jumbo:nth-child(2) {
+        padding-top: 1rem;
+        order: -1;
+        width: 100%;
+        position: absolute;
+        top: 40%;
+        z-index: 3;
       }
     }
   }
