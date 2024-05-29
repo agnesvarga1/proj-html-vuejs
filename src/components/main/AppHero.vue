@@ -144,7 +144,6 @@ export default {
       display: flex;
     }
     .jumbo-left {
-      border: 2px solid green;
       background-image: url("../../assets/img/blob.svg");
       background-repeat: no-repeat;
       background-size: 80%;
@@ -240,27 +239,55 @@ export default {
         figure {
           position: absolute;
           bottom: 2rem;
-          height: 158%;
+          height: 120%;
         }
       }
     }
   }
-  /*************************************BREAKPOINT TO LG************************************************** */
-  @media only screen and (max-width: 992px) {
+}
+
+/*************************************BREAKPOINT TO LG************************************************** */
+@media only screen and (max-width: 992px) {
+  .wrapper {
     .jumbo-container {
+      padding-top: 10rem;
       flex-direction: column;
-      .jumbo {
-        .jumbo-left {
-          width: 50%;
+      .jumbo-left,
+      .jumbo-right {
+        width: 50%;
+      }
+
+      .jumbo-left {
+        figure.right-left {
+          padding-top: 0;
+          padding-bottom: 2rem;
+          width: 35% !important;
         }
       }
+      .jumbo-right {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        .top-right {
+          justify-content: flex-end;
+          padding-right: 0;
+          img {
+            height: 15rem;
+            margin-right: 3rem;
+            margin-bottom: 5rem;
+          }
+        }
+        figure {
+          padding-top: 2rem;
+          right: 0;
+        }
+      }
+
       .jumbo:nth-child(2) {
-        padding-top: 1rem;
+        padding-top: 2rem;
+        margin-bottom: 3rem;
         order: -1;
         width: 100%;
-        position: absolute;
-        top: 40%;
-        z-index: 3;
       }
     }
   }
