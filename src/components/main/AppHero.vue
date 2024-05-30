@@ -118,7 +118,7 @@ export default {
   }
   .right-side {
     background-image: url("../../assets/img/artist-shape-01.png");
-    background-size: 60%;
+    background-size: 80%;
     background-position: top;
     display: flex;
     justify-content: flex-end;
@@ -249,6 +249,12 @@ export default {
 /*************************************BREAKPOINT TO LG************************************************** */
 @media only screen and (max-width: 992px) {
   .wrapper {
+    .left-side {
+      figure {
+        height: 40%;
+        margin-bottom: 7rem;
+      }
+    }
     .jumbo-container {
       padding-top: 10rem;
       flex-direction: column;
@@ -258,10 +264,27 @@ export default {
       }
 
       .jumbo-left {
+        background-size: 35%;
+        background-position-x: -5%;
+        background-position-y: -4%;
+        .top-left {
+          background-image: none;
+        }
+        .left-left {
+          img {
+            margin-bottom: 5rem;
+            width: 35% !important;
+          }
+        }
         figure.right-left {
-          padding-top: 0;
-          padding-bottom: 2rem;
-          width: 35% !important;
+          padding-top: 0 !important;
+          padding-bottom: 5rem;
+          margin-left: 2rem;
+          width: 28% !important;
+
+          img {
+            width: 100%;
+          }
         }
       }
       .jumbo-right {
@@ -288,6 +311,52 @@ export default {
         margin-bottom: 3rem;
         order: -1;
         width: 100%;
+      }
+    }
+  }
+}
+/***********************************************BREAKPOINT MD ***************************************************************************************************************** */
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    .left-side {
+      figure {
+        height: 30%;
+        margin-right: 10rem;
+        margin-bottom: 12rem;
+      }
+    }
+    .jumbo-container {
+      padding-top: 7.6rem;
+      .jumbo-right {
+        .top-right {
+          justify-content: flex-end;
+          padding-right: 0;
+          img {
+            height: 9rem;
+            margin-right: 5rem;
+            margin-bottom: 18rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .wrapper {
+    .jumbo-container {
+      .jumbo-middle {
+        .cta {
+          h1 {
+            font-size: 3rem;
+          }
+          h2 {
+            font-size: 1.5rem;
+          }
+          button {
+            padding: 0.6rem 2.1rem;
+          }
+        }
       }
     }
   }
