@@ -75,7 +75,11 @@ export default {
           <img src="../../assets/img/artist-shape-04.png" alt="" />
         </div>
         <div class="bottom-right">
-          <img src="../../assets/img/maxcoach-shape-12.png" alt="design" />
+          <img
+            id="dots"
+            src="../../assets/img/maxcoach-shape-12.png"
+            alt="design"
+          />
           <figure>
             <img src="../../assets/img/artist-hero-image-04.jpg" alt="artist" />
           </figure>
@@ -341,20 +345,60 @@ export default {
     }
   }
 }
-
+/////////******************************SMALL SCREEN******************************************* */
 @media only screen and (max-width: 576px) {
   .wrapper {
+    padding-top: 0;
+    .left-side {
+      figure {
+        height: 30%;
+        margin-right: 8.5rem;
+        margin-bottom: 12rem;
+      }
+    }
     .jumbo-container {
+      padding-top: 0;
+      .jumbo-left {
+        .left-left {
+          img {
+            margin-bottom: -2rem;
+            width: 45% !important;
+          }
+        }
+      }
       .jumbo-middle {
         .cta {
           h1 {
-            font-size: 3rem;
+            font-size: 1.5rem;
           }
           h2 {
-            font-size: 1.5rem;
+            font-size: 0.7rem;
           }
           button {
             padding: 0.6rem 2.1rem;
+            font-size: 0.7rem;
+          }
+        }
+      }
+      .jumbo-right {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        .top-right {
+          justify-content: flex-end;
+          padding-right: 0;
+          img {
+            height: 4rem;
+            margin-right: 3rem;
+            margin-bottom: 1rem;
+          }
+        }
+
+        .bottom-right {
+          figure {
+            padding-top: 2rem;
+            height: 60% !important;
+            right: 0;
           }
         }
       }
