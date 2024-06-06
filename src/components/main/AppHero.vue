@@ -355,14 +355,22 @@ export default {
     }
     .jumbo-container {
       padding-top: 3rem;
+      .jumbo-middle {
+        h1 {
+          font-size: 2.2rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
       .jumbo-right {
         .top-right {
           justify-content: flex-end;
           padding-right: 0;
           img {
-            height: 9rem;
+            height: 8rem;
             margin-right: 5rem;
-            margin-bottom: 18rem;
+            margin-bottom: 2rem;
           }
         }
       }
