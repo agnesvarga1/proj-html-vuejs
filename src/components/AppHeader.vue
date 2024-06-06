@@ -289,6 +289,13 @@ header {
   .nav-bar .socials {
     display: none;
   }
+
+  figure {
+    width: 20% !important;
+    img {
+      width: 100%;
+    }
+  }
   .nav-modal {
     padding: 1rem;
     position: absolute;

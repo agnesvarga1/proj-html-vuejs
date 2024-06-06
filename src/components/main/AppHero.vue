@@ -75,11 +75,6 @@ export default {
           <img src="../../assets/img/artist-shape-04.png" alt="" />
         </div>
         <div class="bottom-right">
-          <img
-            id="dots"
-            src="../../assets/img/maxcoach-shape-12.png"
-            alt="design"
-          />
           <figure>
             <img src="../../assets/img/artist-hero-image-04.jpg" alt="artist" />
           </figure>
@@ -129,7 +124,7 @@ export default {
     align-items: flex-end;
     padding-right: 2rem;
     svg {
-      width: 20%;
+      width: 25%;
     }
     img {
       width: 40%;
@@ -229,21 +224,27 @@ export default {
       .top-right {
         justify-content: flex-end;
         padding-top: 2rem;
-        padding-right: 7.5rem;
+        padding-right: 10rem;
         img {
           height: 100%;
         }
       }
       .bottom-right {
         position: relative;
-        img {
-          height: 100%;
-          margin-right: 5rem;
-        }
+
+        background-image: url("../../assets/img/maxcoach-shape-12.png");
+        background-repeat: no-repeat;
+        background-size: 30%;
+        background-position-x: 0rem;
+        background-position-y: 4rem;
+
         figure {
-          position: absolute;
-          bottom: 2rem;
-          height: 120%;
+          margin-bottom: 15rem;
+          height: 130%;
+          img {
+            height: 100%;
+            margin-right: 10rem;
+          }
         }
       }
     }
@@ -260,7 +261,7 @@ export default {
       }
     }
     .jumbo-container {
-      padding-top: 10rem;
+      padding-top: 2rem;
       flex-direction: column;
       .jumbo-left,
       .jumbo-right {
@@ -291,28 +292,51 @@ export default {
           }
         }
       }
+
+      .jumbo-middle {
+        button {
+          padding-block: 14px;
+        }
+      }
       .jumbo-right {
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: -10rem;
         .top-right {
-          justify-content: flex-end;
+          // justify-content: flex-end;
           padding-right: 0;
+          padding-top: 5rem;
           img {
-            height: 15rem;
-            margin-right: 3rem;
-            margin-bottom: 5rem;
+            height: 10rem;
+            margin-right: 5rem;
+            margin-bottom: -15rem;
           }
         }
-        figure {
-          padding-top: 2rem;
-          right: 0;
+
+        .bottom-right {
+          position: relative;
+
+          background-image: url("../../assets/img/maxcoach-shape-12.png");
+          background-repeat: no-repeat;
+          background-size: 20%;
+          background-position-x: 10rem;
+          background-position-y: 45%;
+
+          figure {
+            height: 15rem;
+            margin-left: 8rem;
+            margin-bottom: 12rem;
+            img {
+              height: 100%;
+              margin-right: 0;
+            }
+          }
         }
       }
 
       .jumbo:nth-child(2) {
         padding-top: 2rem;
-        margin-bottom: 3rem;
+        //margin-bottom: 3rem;
         order: -1;
         width: 100%;
       }
@@ -326,11 +350,11 @@ export default {
       figure {
         height: 30%;
         margin-right: 10rem;
-        margin-bottom: 12rem;
+        margin-bottom: 9rem;
       }
     }
     .jumbo-container {
-      padding-top: 7.6rem;
+      padding-top: 3rem;
       .jumbo-right {
         .top-right {
           justify-content: flex-end;
