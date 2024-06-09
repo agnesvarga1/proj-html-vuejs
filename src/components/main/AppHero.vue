@@ -240,10 +240,10 @@ export default {
 
         figure {
           margin-bottom: 15rem;
-          height: 130%;
+          height: 120%;
           img {
             height: 100%;
-            margin-right: 10rem;
+            margin-right: 5rem;
           }
         }
       }
@@ -257,7 +257,7 @@ export default {
     .left-side {
       figure {
         height: 40%;
-        margin-bottom: 7rem;
+        margin-bottom: 15rem;
       }
     }
     .jumbo-container {
@@ -277,13 +277,13 @@ export default {
         }
         .left-left {
           img {
-            margin-bottom: 5rem;
+            margin-bottom: -2rem;
             width: 35% !important;
           }
         }
         figure.right-left {
-          padding-top: 0 !important;
-          padding-bottom: 5rem;
+          padding: 0 !important;
+          margin-top: 2rem;
           margin-left: 2rem;
           width: 28% !important;
 
@@ -349,8 +349,8 @@ export default {
     .left-side {
       figure {
         height: 30%;
-        margin-right: 10rem;
-        margin-bottom: 9rem;
+        margin-right: 8rem;
+        margin-bottom: 15rem;
       }
     }
     .jumbo-container {
@@ -373,6 +373,13 @@ export default {
             margin-bottom: 2rem;
           }
         }
+        .bottom-right {
+          figure {
+            img {
+              margin-right: 3.2rem;
+            }
+          }
+        }
       }
     }
   }
@@ -381,6 +388,7 @@ export default {
 @media only screen and (max-width: 576px) {
   .wrapper {
     padding-top: 0;
+    height: 70vh;
     .left-side {
       figure {
         height: 30%;
@@ -420,17 +428,18 @@ export default {
           justify-content: flex-end;
           padding-right: 0;
           img {
-            height: 4rem;
-            margin-right: 3rem;
+            height: 6rem;
+            margin-right: 6rem;
             margin-bottom: 1rem;
           }
         }
 
         .bottom-right {
           figure {
+            height: 10rem;
             padding-top: 2rem;
-            height: 60% !important;
-            right: 0;
+            margin-left: 0rem;
+            margin-bottom: 2rem;
           }
         }
       }
