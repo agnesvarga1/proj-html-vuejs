@@ -352,11 +352,17 @@ header {
   .menu-icon-container {
     display: block;
     width: 5%;
+    padding: 5px;
+    cursor: pointer;
     .bar {
-      width: 80%;
-      height: 1px;
+      width: 100%;
+      height: 2px;
+
       background: #000;
       margin: 5px auto;
+    }
+    &:hover .bar {
+      background-color: $main-orange;
     }
   }
   .visible {

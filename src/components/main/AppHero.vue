@@ -388,7 +388,7 @@ export default {
 @media only screen and (max-width: 576px) {
   .wrapper {
     padding-top: 0;
-    height: 70vh;
+    height: 40vh;
     .left-side {
       figure {
         height: 30%;
@@ -444,6 +444,12 @@ export default {
         }
       }
     }
+  }
+}
+@media only screen and (max-width: 420px) {
+  .wrapper {
+    padding-top: 0;
+    height: 70vh;
   }
 }
 </style>
