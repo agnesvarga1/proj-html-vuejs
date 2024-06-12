@@ -39,4 +39,15 @@ export default {
     align-self: flex-start;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .card {
+    flex-basis: calc(100% / 2 - 1.5rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
 </style>

@@ -11,6 +11,7 @@ export default {
     return {
       store,
       videoVisible: false,
+      iframeHtml: "",
     };
   },
   name: "AppSection",
@@ -20,9 +21,22 @@ export default {
   methods: {
     openModal() {
       this.videoVisible = true;
+      this.iframeHtml = `
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/ROa9p2f2jjE?si=vWVWhkU3GhSrKIiN"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+`;
     },
     closeModal() {
       this.videoVisible = false;
+      this.iframeHtml = "";
     },
   },
 };
@@ -81,7 +95,8 @@ export default {
         </figure>
       </div>
       <div v-show="videoVisible === true" class="video-container">
-        <iframe
+        <div v-html="iframeHtml"></div>
+        <!-- <iframe
           width="560"
           height="315"
           src="https://www.youtube.com/embed/ROa9p2f2jjE?si=vWVWhkU3GhSrKIiN"
@@ -90,7 +105,7 @@ export default {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-        ></iframe>
+        ></iframe> -->
         <div @click="closeModal()" id="close-btn">X</div>
       </div>
     </section>
@@ -108,9 +123,12 @@ export default {
     background-position: 0, 80% 0;
 
     text-align: center;
-    h3,
+    h3 {
+      font-size: 4rem;
+      margin-block: 1rem;
+    }
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-block: 1rem;
     }
     .container {
@@ -178,7 +196,7 @@ export default {
       top: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 2;
+      z-index: 10;
       padding-block: 2rem;
       iframe {
         width: 100%;
@@ -226,6 +244,69 @@ export default {
           position: absolute;
           width: 10%;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .wrap-all {
+    section.top {
+      flex-direction: column;
+
+      .left,
+      .right {
+        width: 100%;
+      }
+      .left {
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+      .right {
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .wrap-all {
+    .wrapper {
+      .container {
+        flex-wrap: wrap;
+      }
+    }
+    section.top {
+      flex-direction: column;
+
+      .left {
+        h2 {
+          font-size: 1.9rem;
+        }
+      }
+    }
+    section.bottom {
+      .wrap {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .wrap-all {
+    section.top {
+      .left {
+        padding-inline: 0;
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
+      .right {
+        p {
+          font-size: 1rem;
         }
       }
     }
