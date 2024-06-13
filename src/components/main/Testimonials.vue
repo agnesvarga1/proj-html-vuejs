@@ -130,4 +130,44 @@ export default {
     }
   }
 }
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+    padding-bottom: 2rem;
+    .slider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 1rem;
+
+      .slider-elem {
+        width: 80% !important;
+
+        margin: -7rem auto 0;
+        transform: none;
+
+        left: 10%;
+      }
+      .prev {
+        transform: translateX(-250%) !important;
+      }
+      .next {
+        transform: translateX(160%) !important;
+      }
+    }
+    .slider-handler {
+      margin-top: -10rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .wrapper {
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+}
 </style>
