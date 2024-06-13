@@ -178,4 +178,97 @@ export default {
     }
   }
 }
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    .container {
+      .side-l {
+        width: 3rem;
+      }
+      .side-r {
+        width: 3rem;
+      }
+      .cards {
+        width: 100%;
+        .row {
+          .card {
+            .card-footer {
+              padding: 0.2rem;
+              h4 {
+                font-size: 1.1rem;
+              }
+              div span {
+                font-size: 14px;
+              }
+              &:hover {
+                border: none;
+                position: static;
+                background-color: #fff;
+                transform: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    .container {
+      .side-l {
+        width: 1rem;
+      }
+      .side-r {
+        width: 1rem;
+      }
+      .cards {
+        width: 100%;
+        .row {
+          .card {
+            width: calc(100% / 2 - 0.8rem);
+            .card-footer {
+              padding: 0.5rem;
+              h4 {
+                font-size: 1.5rem;
+              }
+              div span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .wrapper {
+    .container {
+      .side-l {
+        width: 2rem;
+      }
+      .side-r {
+        width: 2rem;
+      }
+      .cards {
+        width: 100%;
+        .row {
+          .card {
+            width: 100%;
+            .card-footer {
+              padding: 0.5rem;
+              h4 {
+                font-size: 1.5rem;
+              }
+              div span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>
