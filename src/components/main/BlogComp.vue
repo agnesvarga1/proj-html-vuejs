@@ -109,6 +109,7 @@ export default {
           line-height: $line;
           padding: 0.5rem;
           background-color: #fff;
+
           .details-r,
           .details-l {
             opacity: 0.7;
@@ -166,5 +167,53 @@ h3.artist {
   font-size: 1rem;
   opacity: 0.7;
   text-align: left;
+}
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    .container {
+      flex-direction: column;
+      padding: 2rem;
+      .col {
+        width: 100%;
+
+        .left {
+          display: none;
+        }
+        .right.left-left {
+          width: 80%;
+          margin: 0 auto;
+          figure {
+            width: 100%;
+          }
+          .footer-card {
+            width: 100%;
+            padding: 1rem;
+          }
+        }
+        .right {
+          width: 0;
+        }
+        .left.right-right {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          figure {
+            width: 100%;
+          }
+          .footer-card {
+            width: 100%;
+            padding: 1rem;
+          }
+        }
+      }
+
+      .col-mid {
+        height: 60vh;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 </style>
