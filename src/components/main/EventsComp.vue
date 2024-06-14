@@ -233,4 +233,117 @@ h3 {
     text-align: left;
   }
 }
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    .container {
+      .left,
+      .right {
+        width: 0;
+      }
+      .mid {
+        width: 100%;
+        margin: 0 auto;
+        .row {
+          .card {
+            .text {
+              h3 {
+                font-size: 1.3rem;
+                margin-top: 1rem;
+              }
+              h5 {
+                font-size: 0.9rem;
+              }
+              span {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    h2 {
+      font-size: 2rem;
+    }
+    .container {
+      .left,
+      .right {
+        width: 0;
+      }
+      .mid {
+        width: 100%;
+        margin: 0 auto;
+        .row {
+          .card {
+            flex-direction: column-reverse;
+            figure {
+              width: 100%;
+              padding-block: 0;
+            }
+            .text {
+              width: 100%;
+              h3 {
+                font-size: 1rem;
+                margin-top: 1rem;
+              }
+              h5 {
+                font-size: 0.7rem;
+              }
+              span {
+                font-size: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .wrapper {
+    h2 {
+      font-size: 2rem;
+    }
+    .container {
+      .left,
+      .right {
+        width: 0;
+      }
+      .mid {
+        width: 100%;
+        margin: 0 auto;
+        .row {
+          .card {
+            width: 100%;
+            flex-direction: column-reverse;
+            padding: 2rem;
+            figure {
+              width: 100%;
+              padding-block: 0;
+            }
+            .text {
+              width: 100%;
+              h3 {
+                font-size: 1.5rem;
+                margin-top: 1rem;
+              }
+              h5 {
+                font-size: 0.9rem;
+              }
+              span {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>
