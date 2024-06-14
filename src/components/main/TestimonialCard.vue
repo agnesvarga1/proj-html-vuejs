@@ -52,4 +52,13 @@ export default {
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  p {
+    font-size: 14px !important;
+  }
+  span {
+    font-size: 12px;
+  }
+}
 </style>

@@ -87,6 +87,7 @@ export default {
 @use "./styles/general.scss";
 
 .nav-modal {
+  overflow: auto;
   padding: 1rem;
   position: fixed;
   width: 50%;

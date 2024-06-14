@@ -165,8 +165,38 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .wrapper {
+    height: fit-content !important;
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    padding-bottom: 0;
+    .slider {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      margin-top: 1.5rem;
+      // height: 100% !important;
+      min-height: 50vh;
+
+      .slider-elem {
+        width: fit-content !important;
+        position: none;
+        margin: 0 auto;
+        transform: none;
+
+        height: fit-content;
+        left: 0%;
+      }
+      .prev {
+        transform: translateX(-250%) !important;
+      }
+      .next {
+        transform: translateX(160%) !important;
+      }
+    }
+    .slider-handler {
+      margin-top: 0;
     }
   }
 }
