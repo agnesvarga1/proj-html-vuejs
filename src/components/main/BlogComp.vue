@@ -181,7 +181,7 @@ h3.artist {
           display: none;
         }
         .right.left-left {
-          width: 80%;
+          width: 100%;
           margin: 0 auto;
           figure {
             width: 100%;

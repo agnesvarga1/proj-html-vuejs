@@ -2,7 +2,9 @@
 import { store } from "../store";
 export default {
   name: "AppHeader",
-
+  props: {
+    state: Boolean,
+  },
   data() {
     return {
       countDownEnd: null,
@@ -10,7 +12,6 @@ export default {
       end: false,
       isScrolled: false,
       scrollPos: 0,
-      isModalOpen: false,
     };
   },
 
@@ -54,15 +55,6 @@ export default {
       } else if (window.scrollY < 50) {
         this.isScrolled = false;
       }
-    },
-    openModal() {
-      this.isModalOpen = true;
-    },
-    closeModal() {
-      this.isModalOpen = false;
-    },
-    handleClickOutside(event) {
-      this.closeModal();
     },
   },
   mounted() {
@@ -132,8 +124,8 @@ export default {
       </ul>
 
       <div
-        @click="openModal()"
-        v-show="isModalOpen === false"
+        @click="$emit('clickToOpen')"
+        v-show="state === false"
         class="menu-icon-container"
       >
         <div class="bar"></div>
@@ -141,51 +133,6 @@ export default {
       </div>
     </div>
   </header>
-  <div
-    class="nav-modal"
-    v-click-outside="handleClickOutside"
-    v-scroll-lock="isModalOpen"
-    v-if="isModalOpen"
-    :class="isModalOpen ? 'visible-f' : ''"
-    ref="modal"
-  >
-    <div><span @click="closeModal()">X</span></div>
-    <ul class="links-sm">
-      <li>
-        <a href="#">Home<i class="fa-solid fa-angle-down"></i></a>
-      </li>
-      <li>
-        <a href="#">Pages<i class="fa-solid fa-angle-down"></i></a>
-      </li>
-      <li>
-        <a href="#">courses<i class="fa-solid fa-angle-down"></i></a>
-      </li>
-      <li>
-        <a href="#">Features<i class="fa-solid fa-angle-down"></i></a>
-      </li>
-      <li>
-        <a href="#">Blog<i class="fa-solid fa-angle-down"></i></a>
-      </li>
-      <li>
-        <a href="#">shop<i class="fa-solid fa-angle-down"></i></a>
-      </li>
-    </ul>
-    <!-- SOCIAL LINKS -->
-    <ul class="social-sm">
-      <li>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-      </li>
-    </ul>
-  </div>
 </template>
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
@@ -296,58 +243,6 @@ header {
       width: 100%;
     }
   }
-  .nav-modal {
-    padding: 1rem;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: 20;
-    background-color: #ffffffdb;
-    font-size: 2rem;
-    flex-direction: column;
-    justify-content: space-between;
-    div {
-      display: flex;
-      justify-content: end;
-      padding: 1rem;
-
-      span {
-        cursor: pointer;
-        padding: 10px;
-        background-color: $main-orange;
-        color: #fff;
-        border-radius: 10px;
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-    }
-    .social-sm,
-    .links-sm {
-      li {
-        a {
-          color: $main-gray;
-          text-transform: capitalize;
-          &:hover {
-            color: $main-orange;
-          }
-        }
-      }
-    }
-    .links-sm {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 100%;
-    }
-    .social-sm {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-  }
 
   .menu-icon-container {
     display: block;
@@ -371,13 +266,6 @@ header {
   .visible-f {
     display: flex;
     overflow: hidden;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .nav-modal {
-    width: 100%;
-    height: 100%;
   }
 }
 </style>
