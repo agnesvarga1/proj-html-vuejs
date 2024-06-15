@@ -275,6 +275,7 @@ h3 {
         font-size: 2rem;
         width: 100%;
         margin-bottom: 3rem;
+        margin-top: 1rem;
       }
       .input-field {
         width: 80%;
@@ -371,14 +372,17 @@ h3 {
       display: block;
       width: 100%;
     }
+    .left.news-letter {
+      display: none;
+    }
     .mid.news-letter {
-      padding: 0 1rem 1rem;
+      padding: 1rem;
 
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         width: 100%;
         margin-bottom: 1rem;
       }
