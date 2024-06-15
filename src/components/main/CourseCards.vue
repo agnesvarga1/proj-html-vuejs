@@ -244,6 +244,9 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .wrapper {
+    h2 {
+      font-size: 1.8rem;
+    }
     .container {
       .side-l {
         width: 2rem;

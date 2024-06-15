@@ -165,34 +165,36 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .wrapper {
-    height: fit-content !important;
+    width: 100% !important;
+    display: block;
     h2 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
     padding-bottom: 0;
     .slider {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      margin-top: 1.5rem;
-      // height: 100% !important;
-      min-height: 50vh;
+      display: block;
+      //margin-top: 1.5rem;
+      height: 100% !important;
+      min-height: 0 !important;
+      background-color: red;
 
       .slider-elem {
         width: fit-content !important;
-        position: none;
+        position: static;
         margin: 0 auto;
         transform: none;
 
         height: fit-content;
-        left: 0%;
+        // left: 0%;
       }
       .prev {
         transform: translateX(-250%) !important;
+        display: none;
       }
       .next {
         transform: translateX(160%) !important;
+        display: none;
       }
     }
     .slider-handler {

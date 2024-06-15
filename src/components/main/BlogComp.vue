@@ -216,4 +216,55 @@ h3.artist {
     }
   }
 }
+
+@media only screen and (max-width: 576px) {
+  .wrapper {
+    h2 {
+      font-size: 1.8rem;
+    }
+    .container {
+      padding-top: 0;
+      .col {
+        .left,
+        .right {
+          h2 {
+            font-size: 1.4rem !important;
+          }
+          .footer-card {
+            .details-l,
+            .details-r {
+              display: block;
+              span {
+                display: block;
+              }
+            }
+          }
+        }
+        padding-inline: 1rem;
+      }
+      .col:first-child {
+        padding-top: 0;
+      }
+      .col-mid {
+        width: 100%;
+        .bottom {
+          h2 {
+            font-size: 1.4rem;
+          }
+          .details-m {
+            display: block;
+            span {
+              display: block;
+              font-size: 14px;
+              margin: 20px;
+            }
+          }
+        }
+      }
+    }
+    .blog-link {
+      font-size: 1.3rem;
+    }
+  }
+}
 </style>
