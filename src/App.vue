@@ -98,7 +98,7 @@ export default {
   background-color: #ffffffdb;
   font-size: 2rem;
   flex-direction: column;
-  justify-content: space-between;
+
   div {
     display: flex;
     justify-content: end;
@@ -130,11 +130,12 @@ export default {
   .links-sm {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
+    gap: 5rem;
+    //  height: 100%;
   }
   .social-sm {
     display: flex;
+    justify-self: flex-end;
     gap: 1rem;
     margin-top: 2rem;
   }
@@ -144,6 +145,10 @@ export default {
   .nav-modal {
     width: 100%;
     height: 100%;
+
+    .links-sm {
+      gap: 3rem;
+    }
   }
 }
 </style>
