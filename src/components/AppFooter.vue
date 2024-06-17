@@ -141,6 +141,7 @@ footer {
 .copy-right {
   display: flex;
   justify-content: center;
+  position: relative;
   padding: 3rem 2rem;
   span {
     opacity: 0.7;
@@ -150,6 +151,10 @@ footer {
     padding: 1rem;
     font-size: 2rem;
     border-radius: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     a {
       display: flex;
       align-items: center;
@@ -160,6 +165,68 @@ footer {
     }
     position: absolute;
     right: 2%;
+    bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    .left,
+    .mid,
+    .right {
+      padding: 0.6rem;
+    }
+  }
+  .copy-right {
+    .jump-top {
+      padding: 0.3rem;
+      font-size: 2rem;
+      border-radius: 100%;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        aspect-ratio: 1;
+        color: white;
+      }
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 2%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    padding-top: 1rem;
+  }
+  .container {
+    flex-direction: column;
+    .left,
+    .mid,
+    .right {
+      padding: 1rem;
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+  .copy-right {
+    padding: 3rem 0 4rem;
+    font-size: 14px;
+
+    .jump-top {
+      padding: 0.1rem !important;
+      font-size: 16px;
+
+      a {
+        width: 2rem;
+      }
+      right: 5%;
+      top: 55%;
+    }
   }
 }
 </style>
