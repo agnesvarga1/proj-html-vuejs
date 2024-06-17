@@ -36,4 +36,11 @@ div {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   z-index: 3;
 }
+
+@media only screen and (max-width: 992px) {
+  div {
+    width: 1.2rem;
+    font-size: 15px;
+  }
+}
 </style>

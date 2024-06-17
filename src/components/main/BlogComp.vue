@@ -267,4 +267,15 @@ h3.artist {
     }
   }
 }
+@media only screen and (max-width: 400px) {
+  .wrapper {
+    .container {
+      padding-bottom: 0;
+    }
+    .blog-link {
+      font-size: 0.8rem;
+      margin-top: 0;
+    }
+  }
+}
 </style>
