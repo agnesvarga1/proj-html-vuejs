@@ -98,7 +98,7 @@ export default {
           </div>
         </div>
       </div>
-      <div class="side-r"></div>
+      <div class="side-r"><h2 class="outline-font">Courses</h2></div>
     </div>
     <div class="helper">
       <button>View all courses &rarr;</button>
@@ -123,6 +123,8 @@ export default {
     }
     .side-r {
       width: 10rem;
+      display: flex;
+      align-items: center;
     }
     .cards {
       width: calc(100% - 20rem);
@@ -177,6 +179,9 @@ export default {
       @include btn-sub;
     }
   }
+  .outline-font {
+    font-size: 10rem;
+  }
 }
 @media only screen and (max-width: 992px) {
   .wrapper {
@@ -220,6 +225,9 @@ export default {
       }
       .side-r {
         width: 1rem;
+        .outline-font {
+          display: none;
+        }
       }
       .cards {
         width: 100%;

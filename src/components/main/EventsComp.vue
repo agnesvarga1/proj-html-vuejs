@@ -45,7 +45,7 @@ export default {
     <h3 class="script">Upcoming Events</h3>
     <h2>Let's work together</h2>
     <div class="container">
-      <div class="left"></div>
+      <div class="left"><h2 class="outline-font">Events</h2></div>
       <div class="mid">
         <div class="row">
           <div
@@ -103,6 +103,11 @@ h3 {
   .left {
     background: url("../../assets/img/blob-02.svg") no-repeat;
     background-position: left bottom;
+    display: flex;
+    justify-content: flex-end;
+    .outline-font {
+      font-size: 10rem;
+    }
   }
   .right {
     background-image: url("../../assets/img/maxcoach-shape-13.png"),
@@ -151,6 +156,7 @@ h3 {
           }
         }
       }
+
       .tops {
         flex-direction: row-reverse;
       }
@@ -286,6 +292,9 @@ h3 {
 
 @media only screen and (max-width: 768px) {
   .wrapper {
+    .outline-font {
+      display: none;
+    }
     h2 {
       font-size: 2rem;
     }
